@@ -1,0 +1,581 @@
+# Git and DevOps Practical Viva – All Questions with Answers
+
+Here are all the answers in **simple language**, with examples wherever required. These answers are suitable for your B.Tech practical viva.
+
+# PART 1: GIT VIVA QUESTIONS
+
+### 1. What is Git?
+Git is a **distributed version control system** used to track changes in source code and manage projects.
+
+Example: It helps developers track who changed the code and when.
+
+### 2. What is the difference between Git and GitHub?
+
+| Git | GitHub |
+|---|---|
+| Version control system | Cloud-based code hosting platform |
+| Works locally | Works online |
+| Tracks code changes | Stores and shares repositories |
+| Developed by Linus Torvalds | Owned by Microsoft |
+
+### 3. Why do we use version control?
+Version control is used to:
+- Track changes in code.
+- Maintain different versions.
+- Collaborate with developers.
+- Restore previous versions.
+- Prevent loss of code.
+
+### 4. What is a repository?
+A repository (repo) is a storage location where project files and their version history are maintained.
+
+There are two types:
+- Local repository: Stored on our computer.
+- Remote repository: Stored on platforms like GitHub.
+
+### 5. What is the difference between a local repository and a remote repository?
+
+| Local Repository | Remote Repository |
+|---|---|
+| Stored on a computer | Stored on a server |
+| Used for local development | Used for collaboration |
+| Can work offline | Usually accessed through the internet |
+
+### 6. What is the purpose of the `git init` command?
+`git init` is used to initialize a new Git repository in a project folder.
+
+Example:
+```bash
+git init
+```
+
+### 7. What is the use of `git clone`?
+`git clone` is used to copy an existing remote repository to our local computer.
+
+Example:
+```bash
+git clone https://github.com/user/project.git
+```
+
+### 8. What is the difference between `git add` and `git commit`?
+
+- `git add`: Moves modified files to the staging area.
+- `git commit`: Saves staged changes in the repository history.
+
+Example:
+```bash
+git add .
+git commit -m "First commit"
+```
+
+### 9. What does `git status` do?
+It displays the current status of the working directory.
+
+It shows:
+- Modified files.
+- Untracked files.
+- Staged files.
+- Changes ready for commit.
+
+Command:
+```bash
+git status
+```
+
+### 10. What is a branch in Git?
+A branch is an independent line of development.
+
+It allows developers to work on different features without affecting the main code.
+
+Example:
+- main
+- feature-login
+- bug-fix
+
+### 11. How do you create a new branch?
+
+Command:
+```bash
+git branch branch-name
+```
+
+To create and switch to a new branch:
+```bash
+git switch -c feature
+```
+
+### 12. What is the difference between Git Merge and Git Rebase?
+
+| Git Merge | Git Rebase |
+|---|---|
+| Combines branches | Moves commits onto another base |
+| Preserves branch history | Creates a more linear history |
+| May create a merge commit | Usually does not create a merge commit |
+
+**Simple answer:** Merge combines branches, whereas rebase changes the base of commits to create a linear history.
+
+### 13. What is a merge conflict, and how do you resolve it?
+A merge conflict occurs when Git cannot automatically combine changes, usually because two developers modified the same part of a file.
+
+Steps to resolve:
+1. Open the conflicting file.
+2. Identify conflicting changes.
+3. Edit the file and select the correct changes.
+4. Save the file.
+5. Add and commit the resolved file.
+
+Commands:
+```bash
+git add .
+git commit -m "Conflict resolved"
+```
+
+### 14. What is the purpose of `git push` and `git pull`?
+
+- `git push`: Uploads local commits to a remote repository.
+- `git pull`: Downloads and integrates remote changes into the current branch.
+
+### 15. What is a Pull Request?
+A Pull Request (PR) is a request to merge changes from one branch into another branch.
+
+It allows other developers to review the code before merging.
+
+### 16. What is the difference between `git fetch` and `git pull`?
+
+| Git Fetch | Git Pull |
+|---|---|
+| Downloads remote changes | Downloads remote changes |
+| Does not integrate changes into current branch | Integrates changes into current branch |
+| Safer for reviewing changes first | Directly updates the current branch |
+
+### 17. What is `.gitignore`?
+`.gitignore` is a file that tells Git which files and folders should not be tracked.
+
+Examples:
+```text
+__pycache__/
+.env
+*.log
+node_modules/
+```
+
+It is commonly used to ignore temporary files, dependencies and sensitive configuration files.
+
+### 18. How can you check the commit history in Git?
+
+Use:
+```bash
+git log
+```
+
+For a short history:
+```bash
+git log --oneline
+```
+
+### 19. What is the use of `git checkout` or `git switch`?
+
+These commands are used to switch between branches.
+
+Example:
+```bash
+git switch main
+```
+
+To create and switch to a new branch:
+```bash
+git switch -c new-branch
+```
+
+`git checkout` is an older command that can also restore files and move between commits.
+
+### 20. How do you undo a commit in Git?
+
+There are different ways:
+
+**Using git revert:**
+```bash
+git revert HEAD
+```
+Creates a new commit that reverses the changes of the previous commit.
+
+**Using git reset:**
+```bash
+git reset --soft HEAD~1
+```
+Removes the latest commit but keeps its changes staged.
+
+---
+
+# PART 2: DEVOPS VIVA QUESTIONS
+
+### 21. What is DevOps?
+DevOps is a combination of Development (Dev) and Operations (Ops).
+
+It is a software development approach that improves collaboration and automates software building, testing and deployment.
+
+### 22. Why is DevOps important in software development?
+
+DevOps is important because:
+1. Faster software delivery.
+2. Better teamwork.
+3. Automation of tasks.
+4. Fewer deployment errors.
+5. Continuous testing and integration.
+6. Improved software quality.
+
+### 23. What is the difference between Development and Operations teams?
+
+| Development Team | Operations Team |
+|---|---|
+| Develops software | Maintains software infrastructure |
+| Writes code | Manages servers |
+| Fixes coding bugs | Handles deployment and monitoring |
+| Focuses on development | Focuses on stability and performance |
+
+### 24. What is the DevOps lifecycle?
+
+The DevOps lifecycle consists of these stages:
+
+1. **Plan:** Plan project requirements.
+2. **Code:** Write the source code.
+3. **Build:** Convert source code into an application.
+4. **Test:** Test the application.
+5. **Release:** Prepare the application for deployment.
+6. **Deploy:** Deploy the application.
+7. **Operate:** Maintain the application.
+8. **Monitor:** Monitor application performance.
+
+These stages form a continuous cycle.
+
+### 25. What is Continuous Integration (CI)?
+CI is the practice of frequently merging developers' code into a shared repository and automatically building and testing it.
+
+**Example:** Jenkins automatically tests code whenever a developer pushes changes.
+
+### 26. What is Continuous Delivery (CD)?
+Continuous Delivery is a practice in which code is automatically built, tested and prepared for deployment.
+
+The final production deployment usually requires manual approval.
+
+### 27. What is the difference between Continuous Delivery and Continuous Deployment?
+
+| Continuous Delivery | Continuous Deployment |
+|---|---|
+| Code is ready for deployment | Code is automatically deployed |
+| Manual approval may be required | No manual approval required |
+| Deployment is controlled by humans | Deployment is automated |
+
+### 28. What is a CI/CD pipeline?
+A CI/CD pipeline is an automated process used to build, test and deploy software.
+
+**Example workflow:**
+
+Developer writes code → GitHub → Jenkins → Build → Test → Docker → Deployment.
+
+### 29. What is Jenkins?
+Jenkins is an open-source automation server used for Continuous Integration and Continuous Delivery.
+
+Uses:
+- Automates builds.
+- Runs tests.
+- Integrates with GitHub.
+- Automates deployment.
+
+### 30. What is Docker?
+Docker is an open-source platform used to develop, package and run applications inside containers.
+
+It ensures that applications run consistently across different environments.
+
+### 31. What is a container?
+A container is a lightweight, isolated environment that contains an application and its required dependencies.
+
+Example: A Python application with Python libraries can run inside a Docker container.
+
+### 32. What is the difference between a Virtual Machine and a Container?
+
+| Virtual Machine | Container |
+|---|---|
+| Includes a complete guest OS | Shares the host OS kernel |
+| Heavyweight | Lightweight |
+| Requires more resources | Requires fewer resources |
+| Takes more time to start | Starts quickly |
+| Uses a hypervisor | Uses a container runtime |
+
+### 33. What is Kubernetes?
+Kubernetes is an open-source container orchestration platform.
+
+It is used to manage, deploy, scale and monitor containers.
+
+**Example:** If an application needs multiple containers, Kubernetes manages them automatically.
+
+---
+
+# PART 3: GIT AND DEVOPS PRACTICAL VIVA QUESTIONS
+
+### 34. How do you upload a project from your computer to GitHub?
+
+Steps:
+
+**Step 1: Initialize Git**
+```bash
+git init
+```
+
+**Step 2: Add files**
+```bash
+git add .
+```
+
+**Step 3: Commit files**
+```bash
+git commit -m "Initial commit"
+```
+
+**Step 4: Add remote repository**
+```bash
+git remote add origin https://github.com/username/repository.git
+```
+
+**Step 5: Rename branch**
+```bash
+git branch -M main
+```
+
+**Step 6: Push code**
+```bash
+git push -u origin main
+```
+
+Now the project is uploaded to GitHub.
+
+### 35. How do you create and switch to a new branch?
+
+Command:
+```bash
+git switch -c feature
+```
+
+This command creates a new branch called `feature` and switches to it.
+
+### 36. How do multiple developers work on the same project using Git?
+
+Steps:
+1. Create a common GitHub repository.
+2. Each developer clones the repository.
+3. Developers create separate branches.
+4. Each developer works on their own branch.
+5. They commit and push their changes.
+6. They create Pull Requests.
+7. Changes are reviewed and merged into the main branch.
+
+### 37. How do you resolve a merge conflict?
+
+Example:
+
+Two developers modify the same line in a file.
+
+Git shows a merge conflict.
+
+Steps:
+1. Open the conflicting file.
+2. Find conflict markers.
+3. Choose the correct code.
+4. Remove conflict markers.
+5. Save the file.
+
+Commands:
+```bash
+git add .
+git commit -m "Resolved conflict"
+```
+
+### 38. How can Git be integrated with Jenkins?
+
+Steps:
+1. Install Jenkins.
+2. Install the required Git plugin.
+3. Create a Jenkins job or pipeline.
+4. Add the GitHub repository URL.
+5. Configure the build process.
+6. Configure a webhook or polling.
+7. Jenkins automatically builds and tests code when changes are detected.
+
+### 39. How does a CI/CD pipeline deploy an application?
+
+Working process:
+
+1. Developer pushes code to GitHub.
+2. Jenkins detects changes.
+3. Jenkins downloads the code.
+4. Application is built.
+5. Automated tests are executed.
+6. Docker creates an application image if configured.
+7. Application is deployed to the server.
+
+### 40. How do Docker containers help in deployment?
+
+Docker containers:
+- Provide a consistent environment.
+- Package applications with dependencies.
+- Make deployment easier.
+- Reduce environment-related errors.
+- Support portability and scalability.
+
+---
+
+# PART 4: IMPORTANT GIT COMMANDS TO REMEMBER
+
+These commands are very important for practical viva.
+
+| Command | Purpose |
+|---|---|
+| `git init` | Initialize a repository |
+| `git clone URL` | Copy a remote repository |
+| `git status` | Check working-tree status |
+| `git add .` | Stage all changes |
+| `git commit -m "message"` | Save a commit |
+| `git branch` | List branches |
+| `git branch name` | Create a branch |
+| `git switch branch-name` | Switch branch |
+| `git switch -c name` | Create and switch branch |
+| `git merge branch-name` | Merge a branch |
+| `git push` | Upload commits |
+| `git pull` | Fetch and integrate remote changes |
+| `git fetch` | Download remote changes |
+| `git log` | View commit history |
+| `git log --oneline` | View short commit history |
+| `git remote -v` | View remote repository URLs |
+| `git diff` | View unstaged changes |
+| `git stash` | Temporarily save changes |
+| `git revert HEAD` | Reverse the latest commit |
+| `git reset --soft HEAD~1` | Undo latest commit but keep staged changes |
+
+---
+
+# PART 5: IMPORTANT ADDITIONAL CONCEPTS
+
+These concepts are frequently asked in practical viva.
+
+### 41. What is a Docker Image?
+A Docker image is a read-only template used to create Docker containers.
+
+### 42. What is the difference between Docker Image and Docker Container?
+
+| Docker Image | Docker Container |
+|---|---|
+| Template of an application | Running instance of an image |
+| Read-only | Has a writable layer |
+| Used to create containers | Used to run applications |
+
+### 43. What is a Dockerfile?
+A Dockerfile is a text file containing instructions to build a Docker image.
+
+Example:
+```dockerfile
+FROM python:3.12
+
+WORKDIR /app
+
+COPY . .
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "app.py"]
+```
+
+### 44. What is a Docker Hub?
+Docker Hub is a cloud-based platform where developers can store, share and download Docker images.
+
+### 45. What is a Docker Volume?
+A Docker Volume is used to store data permanently outside a container's writable layer.
+
+### 46. What is a Jenkins Pipeline?
+A Jenkins Pipeline is a set of automated steps used to build, test and deploy applications.
+
+### 47. What is a Jenkinsfile?
+A Jenkinsfile is a text file that defines the Jenkins pipeline using code.
+
+### 48. What is a Jenkins Job?
+A Jenkins Job is a task configured in Jenkins to perform operations such as building, testing and deploying software.
+
+### 49. What is a Webhook?
+A webhook is a mechanism that automatically sends a notification to another application when a specific event occurs.
+
+Example: GitHub sends a webhook notification to Jenkins whenever code is pushed.
+
+### 50. What is the difference between GitHub and GitHub Actions?
+
+- **GitHub:** Platform for hosting and managing code repositories.
+- **GitHub Actions:** Automation platform used to build, test and deploy code.
+
+### 51. What is Infrastructure as Code (IaC)?
+Infrastructure as Code means managing and creating infrastructure using configuration files instead of manual processes.
+
+Example: Terraform.
+
+### 52. What is Monitoring in DevOps?
+Monitoring means continuously observing application performance, errors, server health and resource usage.
+
+Examples: Prometheus and Grafana.
+
+### 53. What is Scalability?
+Scalability is the ability of an application to handle an increase in users or workload by adding resources.
+
+### 54. What is Automation in DevOps?
+Automation means using tools and scripts to perform repetitive tasks without manual effort.
+
+Example: Automatically testing code using Jenkins.
+
+### 55. What is the main goal of DevOps?
+The main goal of DevOps is to deliver high-quality software faster through collaboration, automation and continuous improvement.
+
+---
+
+# LAST-MINUTE VIVA REVISION
+
+Remember these important differences:
+
+| Question | One-line answer |
+|---|---|
+| Git vs GitHub | Git tracks versions; GitHub hosts repositories. |
+| Git Add vs Commit | Add stages changes; Commit saves changes. |
+| Git Push vs Pull | Push uploads; Pull downloads and integrates. |
+| Fetch vs Pull | Fetch downloads; Pull downloads and integrates. |
+| Merge vs Rebase | Merge combines branches; Rebase moves commits onto another base. |
+| CI vs CD | CI automates integration and testing; CD automates delivery or deployment. |
+| Docker vs Kubernetes | Docker runs containers; Kubernetes manages containers. |
+| Image vs Container | Image is a template; Container is its running instance. |
+| VM vs Container | VM has a guest OS; Container shares the host kernel. |
+| Git vs SVN | Git is distributed; SVN is centralized. |
+| Jenkins vs Docker | Jenkins automates workflows; Docker packages and runs applications. |
+
+## Most Important Questions to Prepare First
+
+If you have limited preparation time, focus on these 15 questions:
+
+1. What is Git?
+2. Git vs GitHub.
+3. What is version control?
+4. Explain `git init`, `git add`, `git commit`.
+5. What is a branch?
+6. What is merge conflict?
+7. What is Git push and pull?
+8. What is DevOps?
+9. Explain DevOps lifecycle.
+10. What is CI/CD?
+11. What is Jenkins?
+12. What is Docker?
+13. Docker Image vs Container.
+14. Virtual Machine vs Container.
+15. What is Kubernetes?
+
+**Viva tip:** Don't just memorize definitions. Understand the purpose of each command and be prepared to write or explain basic Git commands on the practical computer.
+
+---
+
+If you want, I can:
+
+- Explain the CI/CD pipeline with an example workflow
+- Describe steps to resolve a merge conflict in Git
+- Explain how Docker containers improve software deployment
